@@ -8,11 +8,22 @@
           <li><a class="navbar-brand" href="#">我的博客</a></li>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <%= link_to("登录", '#') %>
-                </li>
+      <ul class="nav navbar-nav navbar-right">
+        <% if !current_user %>
+          <li><%= link_to("注册", new_user_registration_path) %></li>
+          <li><%= link_to("登入", new_user_session_path) %></li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= current_user %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
             </ul>
+          </li>
+       <% end %>               
+     </ul>
     </div>
   </div>
 </div>
