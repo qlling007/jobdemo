@@ -1,0 +1,19 @@
+<div class="pull-right">
+  <%= link_to("add a job", new_admin_job_pathm :class => "btn btn-default") %>
+</div>
+<br>
+<table class="table table-boldered">
+  <tr>
+    <td>
+      <%= link_to(job.title, admin_job_path(job)) %>
+    </td>
+    <td>
+      <%= link_to("edit", edit_admin_job_path(job))%>
+      <%= link_to("destroy", admin_job_path(job), :method => :delete, :data =>{:confirm=> "are you sure?"})%>
+    </td>
+    <td>
+      <%= job.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

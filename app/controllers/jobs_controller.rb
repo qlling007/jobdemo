@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  
   def index
     @jobs = Job.all
 
@@ -41,7 +42,7 @@ class JobsController < ApplicationController
 end
   private
   def job_params
-    params.requier(:job).permit(:title, :description)
+   params.require(:job).permit(:title, :description)
 
   end
 end
