@@ -25,7 +25,7 @@ class Admin::JobsController < ApplicationController
     end
 
   end
-  def public
+  def publish
     @job = Job.find(params[:id])
     @job.publish!
 

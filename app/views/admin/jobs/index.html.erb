@@ -16,7 +16,7 @@
       <%= link_to("destroy", admin_job_path(job), :method => :delete, :data =>{:confirm=> "are you sure?"})%>
 
       <% if job.is_hidden %>
-        <%= link_to("public", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
+        <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
       <% else %>
         <%= link_to("hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
       <% end %>
